@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raid.py</title>
+    <link rel="shortcut icon" href="icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+            transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background-color: #1e1e1e;
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #ffffff;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f39c12;
+        }
+        .panel {
+            text-align: center;
+            padding: 40px 20px;
+            margin: 50px auto;
+            max-width: 600px;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s;
+            transition: background-color 0.3s;
+        }
+        .commands {
+            text-align: left;
+            white-space: pre-wrap;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .credits {
+            margin: 50px 0;
+            text-align: center;
+        }
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            animation: bounce 1.5s infinite;
+        }
+        .sun, .moon {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s;
+        }
+        .dark {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .dark header {
+            background-color: #f0f0f0;
+            color: #000000;
+        }
+        .dark nav a {
+            color: #000000;
+        }
+        .dark .panel {
+            background-color: #e0e0e0;
+            color: #000000;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Raid.py</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#credits">Credits</a>
+            <a href="/latest/release.zip" target="_blank">Download</a>
+            <a href="https://dsc.gg/raidtools" target="_blank">Discord</a>
+        </nav>
+    </header>
+    <section id="home">
+        <div class="panel">
+            <h2>Free Tier</h2>
+            <div class="commands">
+                activity         
+                addchannels      
+                announce         
+                assignrole       
+                banserver        
+                checkspies       
+                createroles      
+                deletechannels   
+                deleteroles      
+                dmusers          
+                dumpserver       
+                giveadmin        
+                globalmessage    
+                kickserver       
+                leaveserver      
+                loadserver       
+                nickname         
+                rotatingactivity 
+                setservername    
+                silentping       
+                startspy         
+                status           
+                stopspy          
+                takerole         
+                unlockchannels   
+            </div>
+        </div>
+    </section>
+    <section id="credits" class="credits">
+        <h2>Credits</h2>
+        <p>Owners: @94to, @r6uz</p>
+    </section>
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <img src="https://img.icons8.com/ios-filled/50/000000/sun.png" class="sun" id="theme-icon" />
+    </button>
+    <script>
+        let dark = false;
+        function toggleTheme() {
+            dark = !dark;
+            document.body.classList.toggle('dark', dark);
+            document.getElementById('theme-icon').src = dark ? 'https://img.icons8.com/ios-filled/50/000000/moon.png' : 'https://img.icons8.com/ios-filled/50/000000/sun.png';
+        }
+    </script>
+</body>
+</html>
